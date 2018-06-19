@@ -1,38 +1,15 @@
----
 shared:
-  image: node:8
+    image: node:8
 jobs:
-  main:
-    requires: [~pr, ~commit]
-    steps:
-    - install_prerequisites: npm install -g screwdriver-template-main
-    - validate_namespace_template: |
-        template-validate
-    - validate_no-namespace_template: |
-        export SD_TEMPLATE_PATH=./templates/other-template.yaml
-        template-validate
-    - validate_default-namespace_template: |
-        export SD_TEMPLATE_PATH=./templates/screwdriver-template.yaml
-        template-validate
-  publish_namespace_template:
-    requires: [main]
-    steps:
-    - install_prerequisites: npm install -g screwdriver-template-main
-    - publish:  template-publish
-    - autotag: template-tag --name tiff/template --tag latest
-  publish_no-namespace_template:
-    requires: [main]
-    environment:
-      SD_TEMPLATE_PATH: ./templates/other-template.yaml
-    steps:
-    - install_prerequisites: npm install -g screwdriver-template-main
-    - publish:  template-publish 
-    - autotag: template-tag --name tiff/template --tag latest
-  publish_default-namespace_template:
-    requires: [main]
-    environment:
-      SD_TEMPLATE_PATH: ./templates/screwdriver-template.yaml
-    steps:
-    - install_prerequisites: npm install -g screwdriver-template-main
-    - publish:  template-publish
-    - autotag: template-tag --name tifftemplate --tag latest
+    main:
+        requires: [~pr, ~commit]
+        steps:
+            - validate: sd-cmd validate -f sd-command.yaml
+    publish:
+        requires: [main]
+        steps:
+            - publish: sd-cmd publish -f sd-command.yaml -t latest
+    promote:
+        requires: [publish]
+        steps:
+            - publish: sd-cmd promote foo/bar 1.0.1 -t stable
