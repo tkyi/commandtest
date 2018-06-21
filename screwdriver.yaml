@@ -13,4 +13,5 @@ jobs:
     promote:
         requires: [publish]
         steps:
-            - publish: sd-cmd promote tiff/command 1.0.1 -t stable
+            #- publish: sd-cmd promote tiff/command 1.0.1 -t stable
+            - promote: sd-cmd promote tiff/command 1.0.1 stable
