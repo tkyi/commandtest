@@ -3,12 +3,12 @@ name: command
 version: "1"
 description: testing out the usage
 usage: |
-        sd_cmd exec foo/bar@1 <OPTION> <TARGET>\n
-        Options:\n
-                --config              some config file\n
-                --debug               debug mode (default "false")\n
-                --host                super host\n
-                --log-level           set the logging level ("debug"|"info"|"warn"|"error"|"fatal") (default "info")\n
+        sd_cmd exec foo/bar@1 <OPTION> <TARGET>
+        Options:
+                --config              some config file
+                --debug               debug mode (default "false")
+                --host                super host
+                --log-level           set the logging level ("debug"|"info"|"warn"|"error"|"fatal") (default "info")
         Target:                       path to file
 maintainer: bar@baz.com
 format: binary # Format the command is in (binary, habitat)
