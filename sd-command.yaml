@@ -2,7 +2,7 @@ namespace: tiff
 name: command
 version: "1"
 description: has explicit namespace
-usage: 'sd-cmd exec tiff/command@latest -h <host> -d <domain>'
+usage: 'sd-cmd exec tiff/command@latest -foo -bar -baz'
 maintainer: foo@bar.com
 format: binary # Format the command is in (binary, habitat)
 binary:
