@@ -1,9 +1,9 @@
 namespace: tiff
 name: command
 version: "1"
-description: has explicit namespace
+description: testing out the usage
 usage: 'sd-cmd exec tiff/command@latest -foo -bar -baz'
-maintainer: foo@bar.com
+maintainer: bar@baz.com
 format: binary # Format the command is in (binary, habitat)
 binary:
     file: ./tiffcommand.sh # Path to script or binary file from repository root
