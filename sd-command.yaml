@@ -3,7 +3,7 @@ name: command
 version: "1"
 description: testing out the usage
 usage: |
-        sd_cmd exec foo/bar@1 <OPTION> <TARGET>
+        sd-cmd exec foo/bar@1 <OPTION> <TARGET>
         Options:
                 --config              some config file
                 --debug               debug mode (default "false")
