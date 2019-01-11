@@ -10,6 +10,7 @@ echo "You provided the arguments:" "$@"
 
 echo "Downloading script..."
 curl -o ./test.js https://raw.githubusercontent.com/tkyi/commandtest/cdscrewdrivercd/test.js
+chmod +x ./test.js
 
 echo "Getting version..."
 ./test.js "$@"
