@@ -13,4 +13,4 @@ usage: |
 maintainer: bar@baz.com
 format: binary # Format the command is in (binary, habitat)
 binary:
-    file: ./test.js # Path to script or binary file from repository root
+    file: ./run.sh # Path to script or binary file from repository root
