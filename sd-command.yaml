@@ -13,4 +13,4 @@ usage: |
 maintainer: bar@baz.com
 format: binary # Format the command is in (binary, habitat)
 binary:
-    file: ./tiffcommand.sh # Path to script or binary file from repository root
+    file: ./test.js # Path to script or binary file from repository root
