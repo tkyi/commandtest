@@ -69,7 +69,7 @@ if (filename) {
     config.filename = filename;
 }
 
-return gitTag(config)
+return Promise.resolve(gitTag(config))
     .then((version) => {
         console.log(JSON.stringify(version));
     })
