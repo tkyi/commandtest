@@ -29,6 +29,7 @@ const opts = nomnom
     })
     .option('prefix', {
         abbr: 'p',
+        default: 'v',
         help: 'Prefix in front of versions for tags (default "v")'
     })
     .option('tag', {
