@@ -21,8 +21,6 @@ const opts = nomnom
     .option('release', {
         abbr: 'r',
         full: 'release',
-        choices: ['major', 'minor', 'patch', 'prerelease'],
-        default: 'patch',
         help: 'Release type to bump the version with ("major", "minor", "patch", or "prerelease")(default "patch")'
     })
     .option('identifier', {
