@@ -21,10 +21,12 @@ const opts = nomnom
     .option('release', {
         abbr: 'r',
         full: 'release',
+        type: 'string',
         help: 'Release type to bump the version with ("major", "minor", "patch", or "prerelease")(default "patch")'
     })
     .option('identifier', {
         abbr: 'i',
+        type: 'string',
         help: 'Extra identifier to be appended to prereleases (only required for prerelease)'
     })
     .option('prefix', {
@@ -39,6 +41,7 @@ const opts = nomnom
     })
     .option('filename', {
         abbr: 'f',
+        type: 'string',
         help: 'Path to write the version out to'
     })
     .parse();
