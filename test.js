@@ -8,15 +8,20 @@ const opts = nomnom
     .option('directory', {
         required: true,
         abbr: 'd',
+        full: 'directory',
         help: 'Directory'
     })
     .option('baseVersion', {
         abbr: 'b',
+        full: 'baseVersion',
         required: true,
+        type: 'string',
         help: 'Base version (<MAJOR>.<MINOR> format; i.e.: "1.2")'
     })
     .option('release', {
         abbr: 'r',
+        full: 'release',
+        choices: ['major', 'minor', 'patch', 'release'],
         help: 'Release type to bump the version with ("major", "minor", "patch", or "prerelease")(default "patch")'
     })
     .option('identifier', {
@@ -29,7 +34,6 @@ const opts = nomnom
     })
     .option('tag', {
         abbr: 't',
-        flag: true,
         help: 'Should generate a new Git tag (default "false")'
     })
     .option('filename', {
