@@ -16,6 +16,5 @@ jobs:
             #- publish: sd-cmd promote tiff/command 1.0.1 -t stable
             - promote: sd-cmd promote tiff/command 1.0.2 stable
     external-fork-job:
-        requires: [~commit]
         steps:
             echo: echo hi
