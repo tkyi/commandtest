@@ -20,3 +20,4 @@ jobs:
         # requires: [~sd@3851:main]
         steps:
             - echo: echo hi
+            - sleep: sleep 2m
