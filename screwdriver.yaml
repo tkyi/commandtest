@@ -19,5 +19,5 @@ jobs:
         requires: [~sd@3:main]
         # requires: [~sd@3851:main]
         steps:
-            - echo: echo hi
+            - echo: echo hii
             #- sleep: sleep 2m
