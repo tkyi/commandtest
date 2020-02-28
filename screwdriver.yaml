@@ -3,17 +3,24 @@ shared:
     steps:
         - echo: echo hi
 jobs:
-    main:
-        requires: []
-    fork1:
-        requires: [main]
-    fork2:
-        requires: [main]
-    fork3:
-        requires: [main]
-    fork4:
-        requires: [main]
-        steps:
-            - echo: sleep 30
-    join:
-        requires: [fork1, fork2, fork3, fork4]
+  pre-main:
+    steps:
+      - noop: echo "noop"
+  main:
+    requires: [pre-main]
+  start-1:
+    requires: [pre-main, main]
+  start-2:
+    requires: [pre-main, main]
+  start-3:
+    requires: [pre-main, main]
+  start-4:
+    requires: [pre-main, main]
+  start-5:
+    requires: [pre-main, main]
+  start-6:
+    requires: [pre-main, main]
+  start-7:
+    requires: [pre-main, main]
+  final:
+    requires: [start-1, start-2, start-3, start-4, start-5, start-6, start-7]
