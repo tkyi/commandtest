@@ -13,5 +13,7 @@ jobs:
         requires: [main]
     fork4:
         requires: [main]
+        steps:
+            - echo: sleep 30
     join:
         requires: [fork1, fork2, fork3, fork4]
