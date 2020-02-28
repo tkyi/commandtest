@@ -24,3 +24,5 @@ jobs:
     requires: [pre-main, main]
   final:
     requires: [start-1, start-2, start-3, start-4, start-5, start-6, start-7]
+    steps:
+        - echo: sleep 30
