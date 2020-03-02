@@ -4,6 +4,7 @@ shared:
         - echo: echo hi
 jobs:
   pre-main:
+    requires: [~commit, ~pr, ~sd@6:other-job]
     steps:
       - noop: echo "noop"
   main:
