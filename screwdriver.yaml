@@ -19,7 +19,8 @@ jobs:
         # requires: [~sd@3:main, ~sd@3851:main]
         requires: [~sd@4074:main]
         steps:
-            - echo: echo hi
+            - echo: meta set meta.package.version "3204-external"
+            - cat: cat /sd/meta
     external_fork2:
         # requires: [~sd@3:main, ~sd@3851:main]
         requires: [~sd@4074:main]
