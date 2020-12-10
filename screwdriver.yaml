@@ -19,7 +19,7 @@ jobs:
         # requires: [~sd@3:main, ~sd@3851:main]
         requires: [~sd@4074:main]
         steps:
-            - echo: meta set meta.package.version "3208-newexternal"
+            - echo: meta set meta.package.version $SD_BUILD_ID
             - cp: cp -a /sd/meta/. $SD_ARTIFACTS_DIR/meta/
     external_fork2:
         # requires: [~sd@3:main, ~sd@3851:main]
