@@ -4,25 +4,14 @@ jobs:
     main:
         requires: [~pr, ~commit]
         steps:
-            - validate: sd-cmd validate -f sd-command.yaml
+            - meta: meta set meta.firstA "mainJob"
     publish:
-        requires: [main]
+        requires: [~pr, ~commit]
         steps:
-            #- publish: sd-cmd publish -f sd-command.yaml
-            - publish: sd-cmd publish -f sd-command.yaml -t latest
+            - meta: meta set meta.firstB "publishJob"
     promote:
         requires: [publish]
         steps:
-            #- publish: sd-cmd promote tiff/command 1.0.1 -t stable
-            - promote: sd-cmd promote tiff/command 1.0.2 stable
-    external_fork1:
-        # requires: [~sd@3:main, ~sd@3851:main]
-        requires: [~sd@4074:main]
-        steps:
-            - echo: meta set meta.package.version $SD_BUILD_ID
-            - cp: cp -a /sd/meta/. $SD_ARTIFACTS_DIR/meta/
-    external_fork2:
-        # requires: [~sd@3:main, ~sd@3851:main]
-        requires: [~sd@4074:main]
-        steps:
-            - echo: echo hi
+            - meta: |
+                meta get meta
+                cp -a /sd/meta/. $SD_ARTIFACTS_DIR/meta/
