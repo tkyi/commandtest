@@ -4,11 +4,11 @@ jobs:
     main:
         requires: [~pr, ~commit]
         steps:
-            - meta: meta set meta.firstA $(echo date+"%s")
+            - meta: meta set meta.firstA $(echo date +"%s")
     publish:
         requires: [~pr, ~commit]
         steps:
-            - meta: meta set meta.firstB $(echo date+"%s")
+            - meta: meta set meta.firstB $(echo date +"%s")
     promote:
         requires: [publish]
         steps:
