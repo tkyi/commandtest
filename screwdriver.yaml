@@ -8,7 +8,7 @@ jobs:
     publish:
         requires: [~pr, ~commit]
         steps:
-            - meta: meta set meta.firstB "$(echo date +"%s")"
+            - meta: meta set meta.firstB "$(date +"%s")"
     promote:
         requires: [publish]
         steps:
