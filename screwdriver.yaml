@@ -4,11 +4,11 @@ jobs:
     main:
         requires: [~pr, ~commit]
         steps:
-            - meta: meta set meta.firstA "mainJob"
+            - meta: meta set meta.firstA 'date +"%s"'
     publish:
         requires: [~pr, ~commit]
         steps:
-            - meta: meta set meta.firstB "publishJob"
+            - meta: meta set meta.firstB 'date +"%s"'
     promote:
         requires: [publish]
         steps:
